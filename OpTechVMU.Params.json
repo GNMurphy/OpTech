@@ -71,7 +71,37 @@
             "value": "rg-OT"
         },
         "osDiskType": {
-            "value": "Premium_LRS"
+            "value": "StandardSSD_LRS"
+        },
+	"dataDisks": {
+            "value": [
+                {
+                    "lun": 0,
+                    "createOption": "attach",
+                    "caching": "None",
+                    "writeAcceleratorEnabled": false,
+                    "id": null,
+                    "name": "test_DataDisk_0",
+                    "storageAccountType": null,
+                    "diskSizeGB": null,
+                    "diskEncryptionSet": null
+                }
+            ]
+        },
+        "dataDiskResources": {
+            "value": [
+                {
+                    "name": "test_DataDisk_0",
+                    "sku": "StandardSSD_LRS",
+                    "properties": {
+                        "diskSizeGB": 1024,
+                        "creationData": {
+                            "createOption": "empty"
+                        },
+                        "maxShares": "2"
+                    }
+                }
+            ]
         },
         "virtualMachineSize": {
             "value": "Standard_D2s_v3"
