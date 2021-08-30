@@ -1,0 +1,83 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "australiacentral"
+        },
+        "networkInterfaceName": {
+            "value": "optechvmu01654"
+        },
+        "enableAcceleratedNetworking": {
+            "value": true
+        },
+        "networkSecurityGroupName": {
+            "value": "OpTechVMU01-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "SSH",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "22"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "OpTech-AUCentral-VMU-Subnet01"
+        },
+        "virtualNetworkName": {
+            "value": "OpTech-AUCentral-VM-vnet"
+        },
+        "addressPrefixes": {
+            "value": [
+                "10.79.84.0/24"
+            ]
+        },
+        "subnets": {
+            "value": [
+                {
+                    "name": "OpTech-AUCentral-VMU-Subnet01",
+                    "properties": {
+                        "addressPrefix": "10.79.84.64/26"
+                    }
+                }
+            ]
+        },
+        "publicIpAddressName": {
+            "value": "OpTechVMU01-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "virtualMachineName": {
+            "value": "OpTechVMU01"
+        },
+        "virtualMachineComputerName": {
+            "value": "OpTechVMU01"
+        },
+        "virtualMachineRG": {
+            "value": "rg-OT"
+        },
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_D2s_v3"
+        },
+        "adminUsername": {
+            "value": "OpTech-Admin"
+        }
+    }
+}
